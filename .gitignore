@@ -1,0 +1,17 @@
+# Visual Studio build files
+[Bb]in/
+[Oo]bj/
+*.exe
+*.dll
+*.pdb
+
+# User-specific files
+*.user
+*.suo
+*.VC.db
+*.VC.opendb
+.vs/
+
+# Others
+*.log
+ipch/

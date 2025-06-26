@@ -1,0 +1,3 @@
+D:\C++Projects\projects\Company_Manager\Company_Manager\x64\Debug\Company_Manager.vcxproj.AssemblyReference.cache
+D:\C++Projects\projects\Company_Manager\Company_Manager\x64\Debug\CompanyManager.MainForm.resources
+D:\C++Projects\projects\Company_Manager\Company_Manager\x64\Debug\Company_Manager.vcxproj.GenerateResource.cache
