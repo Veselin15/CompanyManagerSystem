@@ -8,6 +8,7 @@ namespace CompanyManager {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Data::SqlClient;
 
 	/// <summary>
 	/// Summary for MainForm
@@ -189,7 +190,24 @@ namespace CompanyManager {
 			MessageBox::Show("Please Enter Mobile Num", "Validation", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 		else {
-			MessageBox::Show("Datat submitted succesfully", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
+			try {
+				String^ connectionstring = "Data Source=localhost;Initial Catalog=CompanyManagerDB;Integrated Security=True";
+				SqlConnection^ connection = gcnew SqlConnection(connectionstring);
+				connection->Open();
+				String^ query = "INSERT INTO UserRecord (FullName, Email, PhoneNumber) VALUES (@Name, @Email, @MobileNum)";
+				SqlCommand^ command = gcnew SqlCommand(query, connection);
+				command->Parameters->AddWithValue("@Name", this->txt_name->Text);
+				command->Parameters->AddWithValue("@Email", this->txt_email->Text);
+				command->Parameters->AddWithValue("@MobileNum", this->txt_mobilenum->Text);
+				command->ExecuteNonQuery();
+				connection->Close();
+				MessageBox::Show("Datat submitted succesfully", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
+
+			}
+			catch (Exception^ ex) {
+				MessageBox::Show(ex->Message, "Database Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
+
 		}
 	}
 	};
