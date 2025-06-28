@@ -201,7 +201,7 @@ namespace CompanyManager {
 				command->Parameters->AddWithValue("@MobileNum", this->txt_mobilenum->Text);
 				command->ExecuteNonQuery();
 				connection->Close();
-				MessageBox::Show("Datat submitted succesfully", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
+                MessageBox::Show("Data submitted successfully", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
 
 			}
 			catch (Exception^ ex) {
