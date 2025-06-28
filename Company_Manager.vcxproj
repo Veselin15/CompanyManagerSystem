@@ -120,12 +120,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AddEmployeeForm.cpp" />
+    <ClCompile Include="AddProjectForm.cpp" />
+    <ClCompile Include="DeleteEmployeeForm.cpp" />
+    <ClCompile Include="DeleteProjectForm.cpp" />
+    <ClCompile Include="EditEmployeeForm.cpp" />
+    <ClCompile Include="EditProjectForm.cpp" />
     <ClCompile Include="LoginCompanyForm.cpp" />
+    <ClCompile Include="MainDashboardForm.cpp" />
     <ClCompile Include="MainForm.cpp" />
     <ClCompile Include="RegisterComapnyForm.cpp" />
+    <ClCompile Include="ViewEmployeesForm.cpp" />
+    <ClCompile Include="ViewProjectsForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AddEmployeeForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="AddProjectForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="DeleteEmployeeForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="DeleteProjectForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="EditEmployeeForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="EditProjectForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="LoginCompanyForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MainDashboardForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MainForm.h">
@@ -134,13 +164,49 @@
     <ClInclude Include="RegisterComapnyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ViewEmployeesForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ViewProjectsForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddEmployeeForm.resx">
+      <DependentUpon>AddEmployeeForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddProjectForm.resx">
+      <DependentUpon>AddProjectForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteEmployeeForm.resx">
+      <DependentUpon>DeleteEmployeeForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteProjectForm.resx">
+      <DependentUpon>DeleteProjectForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditEmployeeForm.resx">
+      <DependentUpon>EditEmployeeForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditProjectForm.resx">
+      <DependentUpon>EditProjectForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginCompanyForm.resx">
       <DependentUpon>LoginCompanyForm.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainDashboardForm.resx">
+      <DependentUpon>MainDashboardForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterComapnyForm.resx">
+      <DependentUpon>RegisterComapnyForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewEmployeesForm.resx">
+      <DependentUpon>ViewEmployeesForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewProjectsForm.resx">
+      <DependentUpon>ViewProjectsForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

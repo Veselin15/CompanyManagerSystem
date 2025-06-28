@@ -2,3 +2,7 @@ D:\C++Projects\projects\Company_Manager\Company_Manager\x64\Debug\Company_Manage
 D:\C++Projects\projects\Company_Manager\Company_Manager\x64\Debug\CompanyManager.MainForm.resources
 D:\C++Projects\projects\Company_Manager\Company_Manager\x64\Debug\Company_Manager.vcxproj.GenerateResource.cache
 D:\C++Projects\projects\Company_Manager\Company_Manager\x64\Debug\CompanyManager.LoginCompanyForm.resources
+D:\C++Projects\projects\Company_Manager\Company_Manager\x64\Debug\CompanyManager.AddEmployeeForm.resources
+D:\C++Projects\projects\Company_Manager\Company_Manager\x64\Debug\CompanyManager.EmployeeForm.resources
+D:\C++Projects\projects\Company_Manager\Company_Manager\x64\Debug\CompanyManager.MainDashboardForm.resources
+D:\C++Projects\projects\Company_Manager\Company_Manager\x64\Debug\CompanyManager.RegisterComapnyForm.resources
