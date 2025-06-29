@@ -1,9 +1,15 @@
   CompanyManager.AddEmployeeForm.resources - Embedded, ContainedInManifestFile, 
-  CompanyManager.EmployeeForm.resources - Embedded, ContainedInManifestFile, 
+  CompanyManager.AddProjectForm.resources - Embedded, ContainedInManifestFile, 
+  CompanyManager.DeleteEmployeeForm.resources - Embedded, ContainedInManifestFile, 
+  CompanyManager.DeleteProjectForm.resources - Embedded, ContainedInManifestFile, 
+  CompanyManager.EditEmployeeForm.resources - Embedded, ContainedInManifestFile, 
+  CompanyManager.EditProjectForm.resources - Embedded, ContainedInManifestFile, 
   CompanyManager.LoginCompanyForm.resources - Embedded, ContainedInManifestFile, 
   CompanyManager.MainDashboardForm.resources - Embedded, ContainedInManifestFile, 
   CompanyManager.MainForm.resources - Embedded, ContainedInManifestFile, 
-  CompanyManager.RegisterComapnyForm.resources - Embedded, ContainedInManifestFile, 
+  CompanyManager.RegisterCompanyForm.resources - Embedded, ContainedInManifestFile, 
+  CompanyManager.ViewEmployeesForm.resources - Embedded, ContainedInManifestFile, 
+  CompanyManager.ViewProjectsForm.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly Company_Manager, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
 	hash=SHA1, flags=PublicKey
@@ -22,16 +28,25 @@ Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c5619
 Class CompanyManager.AddEmployeeForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class CompanyManager.AddProjectForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class CompanyManager.DeleteEmployeeForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class CompanyManager.DeleteProjectForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class CompanyManager.EditEmployeeForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class CompanyManager.EmployeeForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+Class CompanyManager.EditProjectForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class CompanyManager.LoginCompanyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class CompanyManager.RegisterCompanyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class CompanyManager.MainDashboardForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
@@ -40,9 +55,9 @@ Class CompanyManager.MainDashboardForm: AutoLayout, AnsiClass, Class, Public, Be
 Class CompanyManager.MainForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class CompanyManager.RegisterComapnyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+Class CompanyManager.ViewEmployeesForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class CompanyManager.ViewEmployeesForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+Class CompanyManager.ViewProjectsForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

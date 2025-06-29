@@ -18,7 +18,7 @@
     <ClCompile Include="MainForm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RegisterComapnyForm.cpp">
+    <ClCompile Include="RegisterCompanyForm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="LoginCompanyForm.cpp">
@@ -56,7 +56,7 @@
     <ClInclude Include="MainForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RegisterComapnyForm.h">
+    <ClInclude Include="RegisterCompanyForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="LoginCompanyForm.h">

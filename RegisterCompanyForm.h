@@ -1,7 +1,6 @@
 #pragma once
-
 namespace CompanyManager {
-
+	ref class LoginCompanyForm;
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -11,12 +10,12 @@ namespace CompanyManager {
 	using namespace System::Data::SqlClient;
 
 	/// <summary>
-	/// Summary for RegisterComapnyForm
+	/// Summary for RegisterCompanyForm
 	/// </summary>
-	public ref class RegisterComapnyForm : public System::Windows::Forms::Form
+	public ref class RegisterCompanyForm : public System::Windows::Forms::Form
 	{
 	public:
-		RegisterComapnyForm(void)
+		RegisterCompanyForm(void)
 		{
 			InitializeComponent();
 			//
@@ -28,7 +27,7 @@ namespace CompanyManager {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~RegisterComapnyForm()
+		~RegisterCompanyForm()
 		{
 			if (components)
 			{
@@ -79,7 +78,7 @@ namespace CompanyManager {
 			this->login_link = (gcnew System::Windows::Forms::LinkLabel());
 			this->name_txt_box = (gcnew System::Windows::Forms::TextBox());
 			this->cancel_btn = (gcnew System::Windows::Forms::Button());
-			this->submit_btn->Click += gcnew System::EventHandler(this, &RegisterComapnyForm::submit_btn_Click);
+			this->submit_btn = (gcnew System::Windows::Forms::Button());
 			this->LoginText = (gcnew System::Windows::Forms::Label());
 			this->password_label = (gcnew System::Windows::Forms::Label());
 			this->name_label = (gcnew System::Windows::Forms::Label());
@@ -109,6 +108,7 @@ namespace CompanyManager {
 			this->login_link->TabIndex = 16;
 			this->login_link->TabStop = true;
 			this->login_link->Text = L"back to login";
+			this->login_link->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &RegisterCompanyForm::login_link_LinkClicked);
 			// 
 			// name_txt_box
 			// 
@@ -143,6 +143,7 @@ namespace CompanyManager {
 			this->submit_btn->TabIndex = 13;
 			this->submit_btn->Text = L"Submit";
 			this->submit_btn->UseVisualStyleBackColor = true;
+			this->submit_btn->Click += gcnew System::EventHandler(this, &RegisterCompanyForm::submit_btn_Click);
 			// 
 			// LoginText
 			// 
@@ -240,13 +241,15 @@ namespace CompanyManager {
 			this->Controls->Add(this->LoginText);
 			this->Controls->Add(this->password_label);
 			this->Controls->Add(this->name_label);
-			this->Name = L"RegisterComapnyForm";
-			this->Text = L"RegisterComapnyForm";
+			this->Name = L"RegisterCompanyForm";
+			this->Text = L"RegisterCompanyForm";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
+	private: System::Void login_link_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e);
+
 	private: System::Void submit_btn_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ name = name_txt_box->Text->Trim();
 		String^ password = password_txt_box->Text->Trim();

@@ -129,7 +129,7 @@
     <ClCompile Include="LoginCompanyForm.cpp" />
     <ClCompile Include="MainDashboardForm.cpp" />
     <ClCompile Include="MainForm.cpp" />
-    <ClCompile Include="RegisterComapnyForm.cpp" />
+    <ClCompile Include="RegisterCompanyForm.cpp" />
     <ClCompile Include="ViewEmployeesForm.cpp" />
     <ClCompile Include="ViewProjectsForm.cpp" />
   </ItemGroup>
@@ -161,7 +161,7 @@
     <ClInclude Include="MainForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="RegisterComapnyForm.h">
+    <ClInclude Include="RegisterCompanyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ViewEmployeesForm.h">
@@ -199,8 +199,8 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegisterComapnyForm.resx">
-      <DependentUpon>RegisterComapnyForm.h</DependentUpon>
+    <EmbeddedResource Include="RegisterCompanyForm.resx">
+      <DependentUpon>RegisterCompanyForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewEmployeesForm.resx">
       <DependentUpon>ViewEmployeesForm.h</DependentUpon>

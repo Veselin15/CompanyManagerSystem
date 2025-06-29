@@ -1,10 +1,13 @@
 D:\C++Projects\projects\Company_Manager\AddEmployeeForm.cpp;D:\C++Projects\projects\Company_Manager\Company_Manager\x64\Debug\AddEmployeeForm.obj
+D:\C++Projects\projects\Company_Manager\AddProjectForm.cpp;D:\C++Projects\projects\Company_Manager\Company_Manager\x64\Debug\AddProjectForm.obj
 D:\C++Projects\projects\Company_Manager\DeleteEmployeeForm.cpp;D:\C++Projects\projects\Company_Manager\Company_Manager\x64\Debug\DeleteEmployeeForm.obj
+D:\C++Projects\projects\Company_Manager\DeleteProjectForm.cpp;D:\C++Projects\projects\Company_Manager\Company_Manager\x64\Debug\DeleteProjectForm.obj
 D:\C++Projects\projects\Company_Manager\EditEmployeeForm.cpp;D:\C++Projects\projects\Company_Manager\Company_Manager\x64\Debug\EditEmployeeForm.obj
-D:\C++Projects\projects\Company_Manager\EmployeeForm.cpp;D:\C++Projects\projects\Company_Manager\Company_Manager\x64\Debug\EmployeeForm.obj
+D:\C++Projects\projects\Company_Manager\EditProjectForm.cpp;D:\C++Projects\projects\Company_Manager\Company_Manager\x64\Debug\EditProjectForm.obj
 D:\C++Projects\projects\Company_Manager\LoginCompanyForm.cpp;D:\C++Projects\projects\Company_Manager\Company_Manager\x64\Debug\LoginCompanyForm.obj
 D:\C++Projects\projects\Company_Manager\MainDashboardForm.cpp;D:\C++Projects\projects\Company_Manager\Company_Manager\x64\Debug\MainDashboardForm.obj
 D:\C++Projects\projects\Company_Manager\MainForm.cpp;D:\C++Projects\projects\Company_Manager\Company_Manager\x64\Debug\MainForm.obj
-D:\C++Projects\projects\Company_Manager\RegisterComapnyForm.cpp;D:\C++Projects\projects\Company_Manager\Company_Manager\x64\Debug\RegisterComapnyForm.obj
+D:\C++Projects\projects\Company_Manager\RegisterCompanyForm.cpp;D:\C++Projects\projects\Company_Manager\Company_Manager\x64\Debug\RegisterCompanyForm.obj
 D:\C++Projects\projects\Company_Manager\ViewEmployeesForm.cpp;D:\C++Projects\projects\Company_Manager\Company_Manager\x64\Debug\ViewEmployeesForm.obj
+D:\C++Projects\projects\Company_Manager\ViewProjectsForm.cpp;D:\C++Projects\projects\Company_Manager\Company_Manager\x64\Debug\ViewProjectsForm.obj
 D:\C++Projects\projects\Company_Manager\Company_Manager\x64\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cpp;D:\C++Projects\projects\Company_Manager\Company_Manager\x64\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.obj
