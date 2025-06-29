@@ -21,7 +21,7 @@ System::Void CompanyManager::MainDashboardForm::view_project_btn_Click(System::O
     viewProjectForm->ShowDialog(); 
 }
 System::Void CompanyManager::MainDashboardForm::add_employee_btn_Click(System::Object^ sender, System::EventArgs^ e) {
-    AddEmployeeForm^ addEmployeeForm = gcnew AddEmployeeForm();
+    AddEmployeeForm^ addEmployeeForm = gcnew AddEmployeeForm(this->companyId);
     addEmployeeForm->ShowDialog(); 
 }
 System::Void CompanyManager::MainDashboardForm::edit_employee_btn_Click(System::Object^ sender, System::EventArgs^ e) {

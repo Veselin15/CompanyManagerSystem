@@ -55,17 +55,11 @@ namespace CompanyManager {
 			this->edit_project_label = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
-			// 
-			// dataGridView1
-			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Location = System::Drawing::Point(30, 109);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->Size = System::Drawing::Size(651, 311);
 			this->dataGridView1->TabIndex = 46;
-			// 
-			// edit_project_label
-			// 
 			this->edit_project_label->AutoSize = true;
 			this->edit_project_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -76,9 +70,6 @@ namespace CompanyManager {
 			this->edit_project_label->TabIndex = 72;
 			this->edit_project_label->Text = L"View Projects";
 			this->edit_project_label->TextAlign = System::Drawing::ContentAlignment::TopCenter;
-			// 
-			// ViewProjectsForm
-			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(693, 531);

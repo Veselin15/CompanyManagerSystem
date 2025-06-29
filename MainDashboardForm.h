@@ -40,13 +40,12 @@ namespace CompanyManager {
 			}
 		}
 	private:
-		int currentCompanyId;
+		int companyId;
 	public:
-		MainDashboardForm(int companyId)
+		MainDashboardForm(int id)
 		{
 			InitializeComponent();
-			currentCompanyId = companyId;
-			// TODO: update the welcome label
+			this->companyId = id;
 		}
 	private: System::Windows::Forms::Label^ welcome_label;
 
@@ -99,9 +98,6 @@ namespace CompanyManager {
 			this->view_project_btn = (gcnew System::Windows::Forms::Button());
 			this->add_project_btn = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
-			// 
-			// welcome_label
-			// 
 			this->welcome_label->AutoSize = true;
 			this->welcome_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -110,9 +106,6 @@ namespace CompanyManager {
 			this->welcome_label->Size = System::Drawing::Size(150, 37);
 			this->welcome_label->TabIndex = 0;
 			this->welcome_label->Text = L"Welcome";
-			// 
-			// log_out_btn
-			// 
 			this->log_out_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->log_out_btn->Location = System::Drawing::Point(490, 396);
@@ -122,9 +115,6 @@ namespace CompanyManager {
 			this->log_out_btn->Text = L"Log out";
 			this->log_out_btn->UseVisualStyleBackColor = true;
 			this->log_out_btn->Click += gcnew System::EventHandler(this, &MainDashboardForm::log_out_btn_Click);
-			// 
-			// add_employee_btn
-			// 
 			this->add_employee_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->add_employee_btn->Location = System::Drawing::Point(44, 94);
@@ -135,9 +125,6 @@ namespace CompanyManager {
 			this->add_employee_btn->UseMnemonic = false;
 			this->add_employee_btn->UseVisualStyleBackColor = true;
 			this->add_employee_btn->Click += gcnew System::EventHandler(this, &MainDashboardForm::add_employee_btn_Click);
-			// 
-			// view_employees_btn
-			// 
 			this->view_employees_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->view_employees_btn->Location = System::Drawing::Point(44, 165);
@@ -148,9 +135,6 @@ namespace CompanyManager {
 			this->view_employees_btn->UseMnemonic = false;
 			this->view_employees_btn->UseVisualStyleBackColor = true;
 			this->view_employees_btn->Click += gcnew System::EventHandler(this, &MainDashboardForm::view_employees_btn_Click);
-			// 
-			// edit_employee_btn
-			// 
 			this->edit_employee_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->edit_employee_btn->Location = System::Drawing::Point(44, 236);
@@ -161,9 +145,6 @@ namespace CompanyManager {
 			this->edit_employee_btn->UseMnemonic = false;
 			this->edit_employee_btn->UseVisualStyleBackColor = true;
 			this->edit_employee_btn->Click += gcnew System::EventHandler(this, &MainDashboardForm::edit_employee_btn_Click);
-			// 
-			// del_employee_btn
-			// 
 			this->del_employee_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->del_employee_btn->Location = System::Drawing::Point(44, 308);
@@ -173,9 +154,6 @@ namespace CompanyManager {
 			this->del_employee_btn->Text = L"Delete Employee";
 			this->del_employee_btn->UseMnemonic = false;
 			this->del_employee_btn->UseVisualStyleBackColor = true;
-			// 
-			// del_project_btn
-			// 
 			this->del_project_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->del_project_btn->Location = System::Drawing::Point(390, 308);
@@ -185,9 +163,6 @@ namespace CompanyManager {
 			this->del_project_btn->Text = L"Delete Project";
 			this->del_project_btn->UseMnemonic = false;
 			this->del_project_btn->UseVisualStyleBackColor = true;
-			// 
-			// edit_project_btn
-			// 
 			this->edit_project_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->edit_project_btn->Location = System::Drawing::Point(390, 236);
@@ -198,9 +173,6 @@ namespace CompanyManager {
 			this->edit_project_btn->UseMnemonic = false;
 			this->edit_project_btn->UseVisualStyleBackColor = true;
 			this->edit_project_btn->Click += gcnew System::EventHandler(this, &MainDashboardForm::edit_project_btn_Click);
-			// 
-			// view_project_btn
-			// 
 			this->view_project_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->view_project_btn->Location = System::Drawing::Point(390, 165);
@@ -211,9 +183,6 @@ namespace CompanyManager {
 			this->view_project_btn->UseMnemonic = false;
 			this->view_project_btn->UseVisualStyleBackColor = true;
 			this->view_project_btn->Click += gcnew System::EventHandler(this, &MainDashboardForm::view_project_btn_Click);
-			// 
-			// add_project_btn
-			// 
 			this->add_project_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->add_project_btn->Location = System::Drawing::Point(390, 94);
@@ -224,9 +193,6 @@ namespace CompanyManager {
 			this->add_project_btn->UseMnemonic = false;
 			this->add_project_btn->UseVisualStyleBackColor = true;
 			this->add_project_btn->Click += gcnew System::EventHandler(this, &MainDashboardForm::add_project_btn_Click);
-			// 
-			// MainDashboardForm
-			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(589, 455);

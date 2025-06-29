@@ -233,6 +233,7 @@ namespace CompanyManager {
 			this->Controls->Add(this->name_label);
 			this->Name = L"AddProjectForm";
 			this->Text = L"AddProjectForm";
+			this->Load += gcnew System::EventHandler(this, &AddProjectForm::AddProjectForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -260,5 +261,7 @@ private: System::Void description_label_Click(System::Object^ sender, System::Ev
 	}
 private: System::Void name_label_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void AddProjectForm_Load(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

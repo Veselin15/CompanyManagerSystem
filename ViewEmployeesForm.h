@@ -59,9 +59,6 @@ namespace CompanyManager {
 			this->dataGridView = (gcnew System::Windows::Forms::DataGridView());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView))->BeginInit();
 			this->SuspendLayout();
-			// 
-			// edit_employee_label
-			// 
 			this->edit_employee_label->AutoSize = true;
 			this->edit_employee_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -72,9 +69,6 @@ namespace CompanyManager {
 			this->edit_employee_label->TabIndex = 45;
 			this->edit_employee_label->Text = L"View Employees";
 			this->edit_employee_label->TextAlign = System::Drawing::ContentAlignment::TopCenter;
-			// 
-			// dataGridView
-			// 
 			this->dataGridView->AllowUserToOrderColumns = true;
 			this->dataGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView->Location = System::Drawing::Point(12, 99);
@@ -82,9 +76,6 @@ namespace CompanyManager {
 			this->dataGridView->ReadOnly = true;
 			this->dataGridView->Size = System::Drawing::Size(629, 357);
 			this->dataGridView->TabIndex = 46;
-			// 
-			// ViewEmployeesForm
-			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(653, 466);

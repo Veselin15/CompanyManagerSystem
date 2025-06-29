@@ -67,9 +67,6 @@ namespace CompanyManager {
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
-			// 
-			// edit_project_label
-			// 
 			this->edit_project_label->AutoSize = true;
 			this->edit_project_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -80,9 +77,6 @@ namespace CompanyManager {
 			this->edit_project_label->TabIndex = 71;
 			this->edit_project_label->Text = L"Edit Project";
 			this->edit_project_label->TextAlign = System::Drawing::ContentAlignment::TopCenter;
-			// 
-			// cancel_btn
-			// 
 			this->cancel_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->cancel_btn->Location = System::Drawing::Point(393, 405);
@@ -92,9 +86,6 @@ namespace CompanyManager {
 			this->cancel_btn->TabIndex = 67;
 			this->cancel_btn->Text = L"Cancel";
 			this->cancel_btn->UseVisualStyleBackColor = true;
-			// 
-			// button1
-			// 
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button1->Location = System::Drawing::Point(226, 405);
@@ -104,18 +95,12 @@ namespace CompanyManager {
 			this->button1->TabIndex = 66;
 			this->button1->Text = L"Submit";
 			this->button1->UseVisualStyleBackColor = true;
-			// 
-			// dataGridView1
-			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Location = System::Drawing::Point(12, 69);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->Size = System::Drawing::Size(651, 311);
 			this->dataGridView1->TabIndex = 72;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &EditProjectForm::dataGridView1_CellContentClick);
-			// 
-			// EditProjectForm
-			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(674, 536);

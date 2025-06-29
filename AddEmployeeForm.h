@@ -37,12 +37,12 @@ namespace CompanyManager {
 			}
 		}
 	private:
-		int id;
-	public:
-		AddEmployeeForm(int id) {
-			InitializeComponent();
-			this->id = id;
-		}
+    int id;
+public:
+    AddEmployeeForm(int id) {
+        InitializeComponent();
+        this->id = id;
+    }
 	private: System::Windows::Forms::Label^ hire_date_label;
 	private: System::Windows::Forms::Label^ phone_label;
 	protected:

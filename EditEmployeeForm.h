@@ -74,9 +74,6 @@ namespace CompanyManager {
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
-			// 
-			// edit_employee_label
-			// 
 			this->edit_employee_label->AutoSize = true;
 			this->edit_employee_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -87,9 +84,6 @@ namespace CompanyManager {
 			this->edit_employee_label->TabIndex = 44;
 			this->edit_employee_label->Text = L"Edit Employee";
 			this->edit_employee_label->TextAlign = System::Drawing::ContentAlignment::TopCenter;
-			// 
-			// cancel_btn
-			// 
 			this->cancel_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->cancel_btn->Location = System::Drawing::Point(390, 405);
@@ -99,9 +93,6 @@ namespace CompanyManager {
 			this->cancel_btn->TabIndex = 39;
 			this->cancel_btn->Text = L"Cancel";
 			this->cancel_btn->UseVisualStyleBackColor = true;
-			// 
-			// button1
-			// 
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button1->Location = System::Drawing::Point(223, 405);
@@ -111,17 +102,11 @@ namespace CompanyManager {
 			this->button1->TabIndex = 38;
 			this->button1->Text = L"Submit";
 			this->button1->UseVisualStyleBackColor = true;
-			// 
-			// dataGridView1
-			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Location = System::Drawing::Point(12, 68);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->Size = System::Drawing::Size(651, 311);
 			this->dataGridView1->TabIndex = 45;
-			// 
-			// EditEmployeeForm
-			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(675, 497);

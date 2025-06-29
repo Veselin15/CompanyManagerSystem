@@ -46,10 +46,12 @@ System::Void CompanyManager::RegisterCompanyForm::submit_btn_Click(System::Objec
 		MessageBox::Show("An error occurred while registering the company: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 }
-void main(array<System::String^>^ args) {
-    Application::EnableVisualStyles();
-    Application::SetCompatibleTextRenderingDefault(false);
-    // Create the register company form and run the application
-    CompanyManager::RegisterCompanyForm form;
-    Application::Run(% form);
+[STAThreadAttribute]
+int main(array<System::String^>^ args)
+{
+	Application::EnableVisualStyles();
+	Application::SetCompatibleTextRenderingDefault(false);
+	CompanyManager::RegisterCompanyForm form;
+	Application::Run(% form);
+	return 0;
 }
