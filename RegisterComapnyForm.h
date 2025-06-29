@@ -8,6 +8,7 @@ namespace CompanyManager {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Data::SqlClient;
 
 	/// <summary>
 	/// Summary for RegisterComapnyForm
@@ -40,7 +41,8 @@ namespace CompanyManager {
 
 	private: System::Windows::Forms::TextBox^ name_txt_box;
 	private: System::Windows::Forms::Button^ cancel_btn;
-	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ submit_btn;
+
 	private: System::Windows::Forms::Label^ LoginText;
 	private: System::Windows::Forms::Label^ password_label;
 	private: System::Windows::Forms::Label^ name_label;
@@ -77,7 +79,7 @@ namespace CompanyManager {
 			this->login_link = (gcnew System::Windows::Forms::LinkLabel());
 			this->name_txt_box = (gcnew System::Windows::Forms::TextBox());
 			this->cancel_btn = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->submit_btn->Click += gcnew System::EventHandler(this, &RegisterComapnyForm::submit_btn_Click);
 			this->LoginText = (gcnew System::Windows::Forms::Label());
 			this->password_label = (gcnew System::Windows::Forms::Label());
 			this->name_label = (gcnew System::Windows::Forms::Label());
@@ -130,17 +132,17 @@ namespace CompanyManager {
 			this->cancel_btn->Text = L"Cancel";
 			this->cancel_btn->UseVisualStyleBackColor = true;
 			// 
-			// button1
+			// submit_btn
 			// 
-			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->submit_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(164, 316);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(112, 49);
-			this->button1->TabIndex = 13;
-			this->button1->Text = L"Submit";
-			this->button1->UseVisualStyleBackColor = true;
+			this->submit_btn->Location = System::Drawing::Point(164, 316);
+			this->submit_btn->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->submit_btn->Name = L"submit_btn";
+			this->submit_btn->Size = System::Drawing::Size(112, 49);
+			this->submit_btn->TabIndex = 13;
+			this->submit_btn->Text = L"Submit";
+			this->submit_btn->UseVisualStyleBackColor = true;
 			// 
 			// LoginText
 			// 
@@ -234,7 +236,7 @@ namespace CompanyManager {
 			this->Controls->Add(this->login_link);
 			this->Controls->Add(this->name_txt_box);
 			this->Controls->Add(this->cancel_btn);
-			this->Controls->Add(this->button1);
+			this->Controls->Add(this->submit_btn);
 			this->Controls->Add(this->LoginText);
 			this->Controls->Add(this->password_label);
 			this->Controls->Add(this->name_label);
@@ -245,5 +247,43 @@ namespace CompanyManager {
 
 		}
 #pragma endregion
+	private: System::Void submit_btn_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ name = name_txt_box->Text->Trim();
+		String^ password = password_txt_box->Text->Trim();
+		String^ address = maskedTextBox1->Text->Trim();
+		String^ description = maskedTextBox2->Text->Trim();
+		if (name->Length == 0 || password->Length == 0) {
+			MessageBox::Show("Company name and password are required.", "Validation", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+		try {
+			String^ connectionString = "Data Source=localhost;Initial Catalog=CompanyManagerDB;Integrated Security=True";
+			SqlConnection^ connection = gcnew SqlConnection(connectionString);
+			connection->Open();
+			String^ query = "INSERT INTO Companies (name, password, address, description) VALUES (@name, @password, @address, @description)";
+			SqlCommand^ command = gcnew SqlCommand(query, connection);
+
+			command->Parameters->AddWithValue("@name", name);
+			command->Parameters->AddWithValue("@password", password);
+			if (address == "")
+				command->Parameters->AddWithValue("@address", DBNull::Value);
+			else
+				command->Parameters->AddWithValue("@address", address);
+			if (description == "")
+				command->Parameters->AddWithValue("@description", DBNull::Value);
+			else
+				command->Parameters->AddWithValue("@description", description);
+
+			command->ExecuteNonQuery();
+			connection->Close();
+
+			MessageBox::Show("Company registered successfully.", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
+			this->Close();
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show("An error occurred while registering the company: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+	}
 	};
+
 }
