@@ -2,6 +2,7 @@
 
 namespace CompanyManager {
 	ref class RegisterCompanyForm;
+	ref class MainDashboardForm;
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -197,38 +198,6 @@ namespace CompanyManager {
 	private: System::Void LoginCompanyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void register_link_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e);
-	private: System::Void submit_btn_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ name = name_txt_box->Text->Trim();
-		String^ password = password_txt_box->Text->Trim();
-		if (name->Length == 0 || password->Length == 0) {
-			MessageBox::Show("Please fill in all fields.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-			return;
-		}
-		try {
-			String^ connectionString = "Data Source=localhost;Initial Catalog=CompanyManagerDB;Integrated Security=True";
-			SqlConnection^ connection = gcnew SqlConnection(connectionString);
-			connection->Open();
-
-			String^ query = "SELECT COUNT(*) FROM Companies WHERE name = @name AND password = @password";
-			SqlCommand^ command = gcnew SqlCommand(query, connection);
-			command->Parameters->AddWithValue("@name", name);
-			command->Parameters->AddWithValue("@password", password);
-
-			int count = (int)command->ExecuteScalar();
-			connection->Close();
-
-			if (count > 0) {
-				MessageBox::Show("Login successful!", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
-				// TODO: Proceed to the next form or functionality
-				this->Close();
-			}
-			else {
-				MessageBox::Show("Invalid company name or password.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-			}
-		}
-		catch (Exception^ ex) {
-			MessageBox::Show("An error occurred while logging in: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-		}
-	}
+	private: System::Void submit_btn_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

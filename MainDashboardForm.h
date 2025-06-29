@@ -1,7 +1,12 @@
 #pragma once
 
 namespace CompanyManager {
-
+	ref class AddProjectForm;
+	ref class AddEmployeeForm;
+	ref class ViewEmployeesForm;
+	ref class ViewProjectsForm;
+	ref class EditEmployeeForm;
+	ref class EditProjectForm;
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -33,6 +38,15 @@ namespace CompanyManager {
 			{
 				delete components;
 			}
+		}
+	private:
+		int currentCompanyId;
+	public:
+		MainDashboardForm(int companyId)
+		{
+			InitializeComponent();
+			currentCompanyId = companyId;
+			// TODO: update the welcome label
 		}
 	private: System::Windows::Forms::Label^ welcome_label;
 
@@ -107,6 +121,7 @@ namespace CompanyManager {
 			this->log_out_btn->TabIndex = 3;
 			this->log_out_btn->Text = L"Log out";
 			this->log_out_btn->UseVisualStyleBackColor = true;
+			this->log_out_btn->Click += gcnew System::EventHandler(this, &MainDashboardForm::log_out_btn_Click);
 			// 
 			// add_employee_btn
 			// 
@@ -119,7 +134,7 @@ namespace CompanyManager {
 			this->add_employee_btn->Text = L"Add Employee";
 			this->add_employee_btn->UseMnemonic = false;
 			this->add_employee_btn->UseVisualStyleBackColor = true;
-			this->add_employee_btn->Click += gcnew System::EventHandler(this, &MainDashboardForm::employee_btn_Click);
+			this->add_employee_btn->Click += gcnew System::EventHandler(this, &MainDashboardForm::add_employee_btn_Click);
 			// 
 			// view_employees_btn
 			// 
@@ -132,6 +147,7 @@ namespace CompanyManager {
 			this->view_employees_btn->Text = L"View Employees";
 			this->view_employees_btn->UseMnemonic = false;
 			this->view_employees_btn->UseVisualStyleBackColor = true;
+			this->view_employees_btn->Click += gcnew System::EventHandler(this, &MainDashboardForm::view_employees_btn_Click);
 			// 
 			// edit_employee_btn
 			// 
@@ -144,6 +160,7 @@ namespace CompanyManager {
 			this->edit_employee_btn->Text = L"Edit Employee";
 			this->edit_employee_btn->UseMnemonic = false;
 			this->edit_employee_btn->UseVisualStyleBackColor = true;
+			this->edit_employee_btn->Click += gcnew System::EventHandler(this, &MainDashboardForm::edit_employee_btn_Click);
 			// 
 			// del_employee_btn
 			// 
@@ -180,6 +197,7 @@ namespace CompanyManager {
 			this->edit_project_btn->Text = L"Edit Project";
 			this->edit_project_btn->UseMnemonic = false;
 			this->edit_project_btn->UseVisualStyleBackColor = true;
+			this->edit_project_btn->Click += gcnew System::EventHandler(this, &MainDashboardForm::edit_project_btn_Click);
 			// 
 			// view_project_btn
 			// 
@@ -192,6 +210,7 @@ namespace CompanyManager {
 			this->view_project_btn->Text = L"View Projects";
 			this->view_project_btn->UseMnemonic = false;
 			this->view_project_btn->UseVisualStyleBackColor = true;
+			this->view_project_btn->Click += gcnew System::EventHandler(this, &MainDashboardForm::view_project_btn_Click);
 			// 
 			// add_project_btn
 			// 
@@ -204,6 +223,7 @@ namespace CompanyManager {
 			this->add_project_btn->Text = L"Add Project";
 			this->add_project_btn->UseMnemonic = false;
 			this->add_project_btn->UseVisualStyleBackColor = true;
+			this->add_project_btn->Click += gcnew System::EventHandler(this, &MainDashboardForm::add_project_btn_Click);
 			// 
 			// MainDashboardForm
 			// 
@@ -222,6 +242,7 @@ namespace CompanyManager {
 			this->Controls->Add(this->welcome_label);
 			this->Name = L"MainDashboardForm";
 			this->Text = L"MainDashboardForm";
+			this->Load += gcnew System::EventHandler(this, &MainDashboardForm::MainDashboardForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -229,5 +250,14 @@ namespace CompanyManager {
 #pragma endregion
 	private: System::Void employee_btn_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
+	private: System::Void MainDashboardForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void add_project_btn_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void edit_project_btn_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void view_project_btn_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void add_employee_btn_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void edit_employee_btn_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void view_employees_btn_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void log_out_btn_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

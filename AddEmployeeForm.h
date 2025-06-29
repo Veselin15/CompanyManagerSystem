@@ -8,12 +8,14 @@ namespace CompanyManager {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Data::SqlClient;
 
 	/// <summary>
 	/// Summary for AddEmployeeForm
 	/// </summary>
 	public ref class AddEmployeeForm : public System::Windows::Forms::Form
 	{
+
 	public:
 		AddEmployeeForm(void)
 		{
@@ -34,7 +36,15 @@ namespace CompanyManager {
 				delete components;
 			}
 		}
+	private:
+		int id;
+	public:
+		AddEmployeeForm(int id) {
+			InitializeComponent();
+			this->id = id;
+		}
 	private: System::Windows::Forms::Label^ hire_date_label;
+	private: System::Windows::Forms::Label^ phone_label;
 	protected:
 
 	protected:
@@ -43,19 +53,21 @@ namespace CompanyManager {
 
 
 
-	private: System::Windows::Forms::Label^ address_label;
+
 	private: System::Windows::Forms::MaskedTextBox^ email_txt_box;
 
 
 	private: System::Windows::Forms::TextBox^ name_txt_box;
 	private: System::Windows::Forms::Button^ cancel_btn;
-	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ submit_btn;
+
 	private: System::Windows::Forms::Label^ email_label;
 
 	private: System::Windows::Forms::Label^ name_label;
 	private: System::Windows::Forms::Label^ add_employee_label;
+	private: System::Windows::Forms::TextBox^ phone_txt_box;
 
-	private: System::Windows::Forms::TextBox^ address_txt_box;
+
 	private: System::Windows::Forms::DateTimePicker^ dateTimePicker;
 	private: System::Windows::Forms::ComboBox^ department_combo_box;
 	private: System::Windows::Forms::Label^ department_label;
@@ -76,15 +88,15 @@ namespace CompanyManager {
 		void InitializeComponent(void)
 		{
 			this->hire_date_label = (gcnew System::Windows::Forms::Label());
-			this->address_label = (gcnew System::Windows::Forms::Label());
+			this->phone_label = (gcnew System::Windows::Forms::Label());
 			this->email_txt_box = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->name_txt_box = (gcnew System::Windows::Forms::TextBox());
 			this->cancel_btn = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->submit_btn = (gcnew System::Windows::Forms::Button());
 			this->email_label = (gcnew System::Windows::Forms::Label());
 			this->name_label = (gcnew System::Windows::Forms::Label());
 			this->add_employee_label = (gcnew System::Windows::Forms::Label());
-			this->address_txt_box = (gcnew System::Windows::Forms::TextBox());
+			this->phone_txt_box = (gcnew System::Windows::Forms::TextBox());
 			this->dateTimePicker = (gcnew System::Windows::Forms::DateTimePicker());
 			this->department_combo_box = (gcnew System::Windows::Forms::ComboBox());
 			this->department_label = (gcnew System::Windows::Forms::Label());
@@ -103,18 +115,18 @@ namespace CompanyManager {
 			this->hire_date_label->Text = L"Hire Date:";
 			this->hire_date_label->Click += gcnew System::EventHandler(this, &AddEmployeeForm::description_label_Click);
 			// 
-			// address_label
+			// phone_label
 			// 
-			this->address_label->AutoSize = true;
-			this->address_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->phone_label->AutoSize = true;
+			this->phone_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->address_label->Location = System::Drawing::Point(14, 160);
-			this->address_label->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->address_label->Name = L"address_label";
-			this->address_label->Size = System::Drawing::Size(72, 20);
-			this->address_label->TabIndex = 29;
-			this->address_label->Text = L"Address:";
-			this->address_label->Click += gcnew System::EventHandler(this, &AddEmployeeForm::address_label_Click);
+			this->phone_label->Location = System::Drawing::Point(14, 160);
+			this->phone_label->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->phone_label->Name = L"phone_label";
+			this->phone_label->Size = System::Drawing::Size(119, 20);
+			this->phone_label->TabIndex = 29;
+			this->phone_label->Text = L"Phone Number:";
+			this->phone_label->Click += gcnew System::EventHandler(this, &AddEmployeeForm::phone_label_Click);
 			// 
 			// email_txt_box
 			// 
@@ -150,18 +162,18 @@ namespace CompanyManager {
 			this->cancel_btn->UseVisualStyleBackColor = true;
 			this->cancel_btn->Click += gcnew System::EventHandler(this, &AddEmployeeForm::cancel_btn_Click);
 			// 
-			// button1
+			// submit_btn
 			// 
-			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->submit_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(206, 405);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(112, 49);
-			this->button1->TabIndex = 24;
-			this->button1->Text = L"Submit";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &AddEmployeeForm::button1_Click);
+			this->submit_btn->Location = System::Drawing::Point(206, 405);
+			this->submit_btn->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->submit_btn->Name = L"submit_btn";
+			this->submit_btn->Size = System::Drawing::Size(112, 49);
+			this->submit_btn->TabIndex = 24;
+			this->submit_btn->Text = L"Submit";
+			this->submit_btn->UseVisualStyleBackColor = true;
+			this->submit_btn->Click += gcnew System::EventHandler(this, &AddEmployeeForm::submit_btn_Click);
 			// 
 			// email_label
 			// 
@@ -203,16 +215,16 @@ namespace CompanyManager {
 			this->add_employee_label->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			this->add_employee_label->Click += gcnew System::EventHandler(this, &AddEmployeeForm::LoginText_Click);
 			// 
-			// address_txt_box
+			// phone_txt_box
 			// 
-			this->address_txt_box->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->phone_txt_box->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->address_txt_box->Location = System::Drawing::Point(206, 157);
-			this->address_txt_box->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
-			this->address_txt_box->Name = L"address_txt_box";
-			this->address_txt_box->Size = System::Drawing::Size(279, 26);
-			this->address_txt_box->TabIndex = 34;
-			this->address_txt_box->TextChanged += gcnew System::EventHandler(this, &AddEmployeeForm::address_txt_box_TextChanged);
+			this->phone_txt_box->Location = System::Drawing::Point(206, 157);
+			this->phone_txt_box->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->phone_txt_box->Name = L"phone_txt_box";
+			this->phone_txt_box->Size = System::Drawing::Size(279, 26);
+			this->phone_txt_box->TabIndex = 34;
+			this->phone_txt_box->TextChanged += gcnew System::EventHandler(this, &AddEmployeeForm::phone_txt_box_TextChanged);
 			// 
 			// dateTimePicker
 			// 
@@ -252,44 +264,35 @@ namespace CompanyManager {
 			this->Controls->Add(this->department_label);
 			this->Controls->Add(this->department_combo_box);
 			this->Controls->Add(this->dateTimePicker);
-			this->Controls->Add(this->address_txt_box);
+			this->Controls->Add(this->phone_txt_box);
 			this->Controls->Add(this->add_employee_label);
 			this->Controls->Add(this->hire_date_label);
-			this->Controls->Add(this->address_label);
+			this->Controls->Add(this->phone_label);
 			this->Controls->Add(this->email_txt_box);
 			this->Controls->Add(this->name_txt_box);
 			this->Controls->Add(this->cancel_btn);
-			this->Controls->Add(this->button1);
+			this->Controls->Add(this->submit_btn);
 			this->Controls->Add(this->email_label);
 			this->Controls->Add(this->name_label);
 			this->Name = L"AddEmployeeForm";
 			this->Text = L"AddEmployeeForm";
+			this->Load += gcnew System::EventHandler(this, &AddEmployeeForm::AddEmployeeForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	private: System::Void LoginText_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void address_txt_box_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void description_txt_box_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void description_label_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void address_label_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void email_txt_box_MaskInputRejected(System::Object^ sender, System::Windows::Forms::MaskInputRejectedEventArgs^ e) {
-	}
-private: System::Void name_txt_box_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void cancel_btn_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void email_label_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void name_label_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
+	private: System::Void LoginText_Click(System::Object^ sender, System::EventArgs^ e){}
+private: System::Void phone_txt_box_TextChanged(System::Object^ sender, System::EventArgs^ e){}
+private: System::Void description_txt_box_TextChanged(System::Object^ sender, System::EventArgs^ e){}
+private: System::Void description_label_Click(System::Object^ sender, System::EventArgs^ e){}
+private: System::Void phone_label_Click(System::Object^ sender, System::EventArgs^ e){}
+private: System::Void email_txt_box_MaskInputRejected(System::Object^ sender, System::Windows::Forms::MaskInputRejectedEventArgs^ e){}
+private: System::Void name_txt_box_TextChanged(System::Object^ sender, System::EventArgs^ e){}
+private: System::Void cancel_btn_Click(System::Object^ sender, System::EventArgs^ e){}
+private: System::Void submit_btn_Click(System::Object^ sender, System::EventArgs^ e); 
+private: System::Void email_label_Click(System::Object^ sender, System::EventArgs^ e){}
+private: System::Void name_label_Click(System::Object^ sender, System::EventArgs^ e){}
+private: System::Void AddEmployeeForm_Load(System::Object^ sender, System::EventArgs^ e);
 };
 }

@@ -112,6 +112,7 @@ namespace CompanyManager {
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->Size = System::Drawing::Size(651, 311);
 			this->dataGridView1->TabIndex = 72;
+			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &EditProjectForm::dataGridView1_CellContentClick);
 			// 
 			// EditProjectForm
 			// 
@@ -130,5 +131,7 @@ namespace CompanyManager {
 
 		}
 #pragma endregion
-	};
+	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	}
+};
 }
