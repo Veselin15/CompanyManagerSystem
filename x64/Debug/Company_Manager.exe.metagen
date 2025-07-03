@@ -40,6 +40,7 @@ Class CompanyManager.DeleteProjectForm: AutoLayout, AnsiClass, Class, Public, Be
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class CompanyManager.EditEmployeeForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
+    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class CompanyManager.EditProjectForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
@@ -56,6 +57,7 @@ Class CompanyManager.MainDashboardForm: AutoLayout, AnsiClass, Class, Public, Be
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class CompanyManager.ViewEmployeesForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
+    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class CompanyManager.ViewProjectsForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form

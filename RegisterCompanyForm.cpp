@@ -40,7 +40,9 @@ System::Void CompanyManager::RegisterCompanyForm::submit_btn_Click(System::Objec
 		connection->Close();
 
 		MessageBox::Show("Company registered successfully.", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
-		this->Close();
+		LoginCompanyForm^ login = gcnew LoginCompanyForm;
+		login->Show();
+		this->Hide();
 	}
 	catch (Exception^ ex) {
 		MessageBox::Show("An error occurred while registering the company: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);

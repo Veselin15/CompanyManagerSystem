@@ -25,11 +25,11 @@ System::Void CompanyManager::MainDashboardForm::add_employee_btn_Click(System::O
     addEmployeeForm->ShowDialog(); 
 }
 System::Void CompanyManager::MainDashboardForm::edit_employee_btn_Click(System::Object^ sender, System::EventArgs^ e) {
-    EditEmployeeForm^ editEmployeeForm = gcnew EditEmployeeForm();
+    EditEmployeeForm^ editEmployeeForm = gcnew EditEmployeeForm(this->companyId);
     editEmployeeForm->ShowDialog();
 }
 System::Void CompanyManager::MainDashboardForm::view_employees_btn_Click(System::Object^ sender, System::EventArgs^ e) {
-    ViewEmployeesForm^ viewEmployeesForm = gcnew ViewEmployeesForm();
+    ViewEmployeesForm^ viewEmployeesForm = gcnew ViewEmployeesForm(this->companyId);
     viewEmployeesForm->ShowDialog();
 }
 System::Void CompanyManager::MainDashboardForm::log_out_btn_Click(System::Object^ sender, System::EventArgs^ e) {
